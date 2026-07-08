@@ -14,7 +14,7 @@
 
 This repository contains the complete collection of Solidity smart contracts developed for the **Axionova** ecosystem.
 
-The project follows a modular architecture with independent contracts responsible for token issuance, treasury management, governance, staking, presale, vesting, liquidity, rewards, ecosystem funding and incentive distribution.
+The project follows a modular architecture with independent contracts responsible for token issuance, treasury management, governance, staking, presale, vesting, liquidity, rewards, ecosystem fund and more.
 
 The contracts are designed with security, scalability and transparency in mind while leveraging battle-tested OpenZeppelin libraries and best development practices.
 
@@ -93,23 +93,24 @@ ignition/
 
 # Token Distribution
 
-| Category | Percentage | Tokens |
-|-----------|-----------:|-------:|
-| Presale | 35.00% | 262,500,000 |
-| Team Allocation | 6.00% | 45,000,000 |
-| Advisors & Partners | 2.00% | 15,000,000 |
-| Founder Vault | 1.47% | 11,000,000 |
-| Liquidity Pool | 12.00% | 90,000,000 |
-| Marketing / CEXs | 5.00% | 37,500,000 |
-| Game Incentives | 8.00% | 60,000,000 |
-| Staking Rewards | 7.50% | 56,250,000 |
-| Community Incentives | 2.00% | 15,000,000 |
-| Airdrop Campaigns | 0.53% | 4,000,000 |
-| Ecosystem Development | 8.00% | 60,000,000 |
-| Reserve | 8.50% | 63,750,000 |
-| Governance | 2.00% | 15,000,000 |
-| Bug Bounty | 1.00% | 7,500,000 |
-| Charity / Social Impact | 1.00% | 7,500,000 |
+| Category | Sub Category | Percentage | Tokens |
+|----------|--------------|----------:|-------:|
+| **Sale Pool (Presale)** | Presale | 35.00% | 262,500,000 |
+| **Team & Advisors Vesting Pool** | Team Allocation | 6.00% | 45,000,000 |
+| | Advisors & Partners | 2.00% | 15,000,000 |
+| | Founder Vault | 1.47% | 11,000,000 |
+| **Liquidity & Market Operations** | Liquidity Pool | 7.00% | 52,500,000 |
+| | Marketing / CEXs | 3.00% | 22,500,000 |
+| **Emissions & Incentives Pool** | Game Incentives | 8.00% | 60,000,000 |
+| | Staking Rewards | 7.50% | 56,250,000 |
+| | Community Incentives | 2.00% | 15,000,000 |
+| | Airdrop Campaigns | 0.53% | 4,000,000 |
+| **Ecosystem & R&D Pool** | Ecosystem Development | 8.00% | 60,000,000 |
+| | Reserve | 15.50% | 116,250,000 |
+| **Treasury** | Governance | 2.00% | 15,000,000 |
+| | Bug Bounty | 1.00% | 7,500,000 |
+| | Charity / Social Impact | 1.00% | 7,500,000 |
+| | **TOTAL** | **100.00%** | **750,000,000** |
 
 ---
 
