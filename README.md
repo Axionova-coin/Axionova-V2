@@ -6,7 +6,7 @@ Official smart contract repository for **Axionova (AXNV)**.
 
 Axionova is a fixed-supply ERC20 token deployed on BNB Smart Chain with burn, permit, and governance-ready voting support.
 
-The AXNV token contract is designed to remain simple and modular. Presale, vesting, airdrop, staking, gaming incentives, AI rewards, treasury, and governance systems are handled through separate contracts.
+The AXNV token contract is designed to remain simple and modular. Presale, vesting, airdrop, staking, gaming incentives, AI rewards, liquidity, treasury, and governance systems are handled through separate contracts.
 
 ## Network
 
@@ -26,6 +26,7 @@ The AXNV token contract is designed to remain simple and modular. Presale, vesti
 | AXNV Team Advisor Founder Vesting Vault | `0xFb039a997F34794CdCb80Df1ac86154C99aeAdfb` |
 | AXNV Treasury | `0xe1f3377Afe75Eb9051e300488C174373DEe16B69` |
 | AXNV Staking | `0x9f27A15A862323449dfe14988E13aE93F5b4cD13` |
+| AXNV Liquidity Allocation Vault | `0x801822D37a4A56D93a2D7E0A412b7E0a72f34e77` |
 
 ## Deployer
 
@@ -261,8 +262,6 @@ Total treasury allocation:
 
 The AXNV staking contract allows holders to stake AXNV and earn rewards based on stake duration.
 
-The earlier staking model included user stake tracking, reward funding, minimum stake updates, emergency withdrawal penalties, and owner recovery protection for available AXNV [4]. The deployed staking contract follows the updated Axionova staking rules.
-
 ## Staking Allocation
 
 Total staking rewards allocation:
@@ -293,9 +292,34 @@ Total staking rewards allocation:
 | 1 month to before 6 months | 100% returned | No reward | No penalty |
 | After 6 months | 100% returned | 5% APR for first 6 months + 8% APR after 6 months | No penalty |
 
+## Liquidity Allocation Vault
+
+The AXNV Liquidity Allocation Vault holds the liquidity pool allocation until liquidity deployment is required.
+
+The vault does not create liquidity by itself. It stores the liquidity allocation and releases AXNV to the configured liquidity manager when release is enabled.
+
+## Liquidity Allocation
+
+Total liquidity allocation:
+
+```text
+52,500,000 AXNV
+```
+
+## Liquidity Vault Rules
+
+- Liquidity allocation cap: 52,500,000 AXNV
+- AXNV can be funded into the vault by owner
+- Release is paused by default
+- AXNV can only be released to the configured liquidity manager
+- Released AXNV is tracked by the vault
+- Excess AXNV can be recovered by owner
+- Non-AXNV ERC20 rescue is supported
+- Intended for liquidity deployment after presale completion
+
 ## Planned Modular Contracts
 
-The AXNV token does not contain presale, airdrop, staking, gaming, AI, or treasury logic directly.
+The AXNV token does not contain presale, airdrop, staking, gaming, AI, liquidity, or treasury logic directly.
 
 These systems are designed as separate modules:
 
@@ -304,6 +328,7 @@ These systems are designed as separate modules:
 - `AXNVTeamAdvisorFounderVestingVault`
 - `AXNVTreasury`
 - `AXNVStaking`
+- `AXNVLiquidityAllocationVault`
 - `AxionovaGamingRewards`
 - `AxionovaAIRewards`
 - `AxionovaGovernor`
@@ -319,7 +344,7 @@ AXNV follows a minimal and modular architecture:
 - No blacklist
 - No upgradeable proxy for the token
 - No bridge logic inside the token
-- No presale, airdrop, vesting, staking, or treasury logic inside the token
+- No presale, airdrop, vesting, staking, liquidity, or treasury logic inside the token
 - Governance compatibility through ERC20Votes
 - Presale purchases recorded in a separate vesting contract
 - Presale tokens claimable only after TGE and vesting unlocks
@@ -328,6 +353,7 @@ AXNV follows a minimal and modular architecture:
 - Team, advisor, and founder allocations managed through a dedicated vesting vault
 - Treasury allocations managed through a dedicated category-capped treasury contract
 - Staking rewards managed through a dedicated staking contract
+- Liquidity allocation managed through a dedicated liquidity vault
 
 ## License
 
