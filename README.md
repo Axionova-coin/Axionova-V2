@@ -22,6 +22,7 @@ The token contract is designed to remain simple and modular. Presale, vesting, a
 |---|---|
 | AXNV Token | `0x0c9c7B3e3D7F95F6f52F805250AFa7D2E335AeFD` |
 | AXNV Presale Vesting | `0x1FC5C6C2FCF34fC96bd298d60F1d5C1B767fd33a` |
+| AXNV Airdrop | `0xA1680767D1F1bD2d117d1F53EAFd6C6F78096F98` |
 
 ## Deployer
 
@@ -140,6 +141,41 @@ Total presale allocation:
 
 Users can claim AXNV anytime after TGE as tokens become vested.
 
+## Airdrop Contract
+
+The AXNV airdrop contract is a Merkle-based multi-round airdrop system.
+
+Each eligible wallet receives a fixed **200 AXNV** allocation per airdrop claim. The Merkle leaf format uses the round ID and wallet address.
+
+## Airdrop Allocation
+
+Total airdrop allocation:
+
+```text
+4,000,000 AXNV
+```
+
+## Airdrop Rules
+
+- Merkle proof based
+- Multi-round support
+- Each eligible wallet receives 200 AXNV
+- A wallet can receive the airdrop only once
+- Previous recipients can be marked to prevent duplicate claims
+- Round activation/deactivation is supported
+- Emergency pause is supported
+- Unclaimed rewards do not expire
+- Reserved AXNV cannot be recovered by owner
+
+## Airdrop Vesting Schedule
+
+```text
+50% unlocked at TGE
+50% unlocked linearly over 90 days
+```
+
+Users can claim AXNV anytime after TGE as tokens become vested.
+
 ## Planned Modular Contracts
 
 The AXNV token does not contain presale, airdrop, staking, gaming, AI, or treasury logic directly.
@@ -147,7 +183,7 @@ The AXNV token does not contain presale, airdrop, staking, gaming, AI, or treasu
 These systems are designed as separate modules:
 
 - `AXNVPresaleVesting`
-- `AxionovaAirdrop`
+- `AXNVAirdrop`
 - `AxionovaVesting`
 - `AxionovaTreasury`
 - `AxionovaStaking`
@@ -170,6 +206,8 @@ AXNV follows a minimal and modular architecture:
 - Governance compatibility through ERC20Votes
 - Presale purchases recorded in a separate vesting contract
 - Presale tokens claimable only after TGE and vesting unlocks
+- Airdrop claims verified using Merkle proofs
+- Airdrop tokens claimable only after TGE and vesting unlocks
 
 ## License
 
