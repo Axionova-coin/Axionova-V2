@@ -1,12 +1,12 @@
-# Axionova Token
+# Axionova Contracts
 
 Official smart contract repository for **Axionova (AXNV)**.
 
 ## Overview
 
-Axionova is designed as a fixed-supply ERC20 token with governance-ready functionality and modular external contracts for presale, airdrop, vesting, staking, gaming incentives, and AI rewards.
+Axionova is a fixed-supply ERC20 token with governance-ready functionality and modular external contracts for presale, vesting, airdrop, staking, gaming incentives, AI rewards, and treasury operations.
 
-The core token contract is intentionally simple, non-upgradeable, and excludes tax, blacklist, minting, bridge, wrapper, and flash-mint functionality.
+The AXNV token contract is intentionally simple, non-upgradeable, and excludes minting, tax, blacklist, bridge, wrapper, flash-mint, and upgradeable proxy functionality.
 
 ---
 
@@ -30,11 +30,14 @@ The core token contract is intentionally simple, non-upgradeable, and excludes t
 
 ---
 
-## Deployed Contract
+## Deployed Contracts
 
-| Contract | Address |
-|---|---|
-| AXNVToken | `0x0c9c7B3e3D7F95F6f52F805250AFa7D2E335AeFD` |
+| Contract | Address | Network |
+|---|---|---|
+| AXNV Token | `0x0c9c7B3e3D7F95F6f52F805250AFa7D2E335AeFD` | BSC Mainnet |
+| AXNV Presale Vesting | `0x1FC5C6C2FCF34fC96bd298d60F1d5C1B767fd33a` | BSC Mainnet |
+
+---
 
 ## Deployer
 
@@ -58,52 +61,19 @@ The AXNV token includes:
 
 ---
 
-## Tokenomics
+## Presale Vesting Contract
 
-Total supply: **750,000,000 AXNV**
+The AXNV presale vesting contract allows users to buy AXNV allocation using USDT. AXNV is not transferred immediately to users; purchased allocations remain in the contract and users claim AXNV through vesting after TGE [1].
 
-| Category | Allocation |
-|---|---:|
-| Presale | 262,500,000 |
-| Team Allocation | 37,500,000 |
-| Advisors & Partners | 11,250,000 |
-| Founder Vault | 9,350,000 |
-| Liquidity Pool | 52,500,000 |
-| Game Incentives | 60,000,000 |
-| AI Rewards | 37,500,000 |
-| Staking Rewards | 56,250,000 |
-| Community Incentives | 11,250,000 |
-| Airdrop Campaigns | 4,000,000 |
-| Reserve | 116,250,000 |
-| Governance | 11,250,000 |
-| Ecosystem Development | 42,900,000 |
-| Marketing / CEXs | 22,500,000 |
-| Bug Bounty | 7,500,000 |
-| Charity / Social Impact | 7,500,000 |
+### Payment Token
 
----
+| Token | Address | Network |
+|---|---|---|
+| USDT | `0x55d398326f99059fF775485246999027B3197955` | BSC Mainnet |
 
-## Planned Modular Contracts
+### Presale Allocation
 
-The AXNV token does not contain presale, airdrop, staking, gaming, AI, or treasury logic directly.
+Total presale allocation:
 
-These systems are planned as separate contracts:
-
-- `AxionovaPresaleV3`
-- `AxionovaAirdropV3`
-- `AxionovaVestingV3`
-- `AxionovaTreasuryV3`
-- `AxionovaStakingV3`
-- `AxionovaGamingRewardsV3`
-- `AxionovaAIRewardsV3`
-- `AxionovaGovernorV3`
-- `AxionovaTimelockV3`
-
----
-
-## Development Setup
-
-Install dependencies:
-
-```bash
-npm install
+```text
+262,500,000 AXNV
