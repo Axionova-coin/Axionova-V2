@@ -6,7 +6,7 @@ Official smart contract repository for **Axionova (AXNV)**.
 
 Axionova is a fixed-supply ERC20 token deployed on BNB Smart Chain with burn, permit, and governance-ready voting support.
 
-The token contract is designed to remain simple and modular. Presale, vesting, airdrop, staking, gaming incentives, AI rewards, treasury, and governance systems are handled through separate contracts.
+The AXNV token contract is designed to remain simple and modular. Presale, vesting, airdrop, staking, gaming incentives, AI rewards, treasury, and governance systems are handled through separate contracts.
 
 ## Network
 
@@ -23,6 +23,7 @@ The token contract is designed to remain simple and modular. Presale, vesting, a
 | AXNV Token | `0x0c9c7B3e3D7F95F6f52F805250AFa7D2E335AeFD` |
 | AXNV Presale Vesting | `0x1FC5C6C2FCF34fC96bd298d60F1d5C1B767fd33a` |
 | AXNV Airdrop | `0xA1680767D1F1bD2d117d1F53EAFd6C6F78096F98` |
+| AXNV Team Advisor Founder Vesting Vault | `0xFb039a997F34794CdCb80Df1ac86154C99aeAdfb` |
 
 ## Deployer
 
@@ -145,7 +146,7 @@ Users can claim AXNV anytime after TGE as tokens become vested.
 
 The AXNV airdrop contract is a Merkle-based multi-round airdrop system.
 
-Each eligible wallet receives a fixed **200 AXNV** allocation per airdrop claim. The Merkle leaf format uses the round ID and wallet address.
+Each eligible wallet receives a fixed **200 AXNV** allocation per airdrop claim.
 
 ## Airdrop Allocation
 
@@ -176,6 +177,44 @@ Total airdrop allocation:
 
 Users can claim AXNV anytime after TGE as tokens become vested.
 
+## Team Advisor Founder Vesting Vault
+
+The AXNV Team Advisor Founder Vesting Vault manages locked AXNV allocations for team members, advisors, partners, and the founder allocation in a single category-based vesting contract.
+
+## Vesting Vault Allocation
+
+Total vault allocation:
+
+```text
+58,100,000 AXNV
+```
+
+| Category | Allocation |
+|---|---:|
+| Team Allocation | 37,500,000 AXNV |
+| Advisors & Partners | 11,250,000 AXNV |
+| Founder Vault | 9,350,000 AXNV |
+| **Total** | **58,100,000 AXNV** |
+
+## Vesting Vault Schedule
+
+| Category | Cliff | Linear Vesting |
+|---|---:|---:|
+| Team Allocation | 12 months | 24 months |
+| Advisors & Partners | 6 months | 24 months |
+| Founder Vault | 12 months | 48 months |
+
+## Vesting Vault Rules
+
+- Category-wise allocation caps
+- Separate vesting periods by category
+- Claims can be paused by owner
+- Beneficiaries can claim vested AXNV after unlock
+- Batch schedule creation is supported
+- Batch claiming is supported
+- Unallocated AXNV can be recovered by owner
+- Reserved/allocated AXNV remains protected for beneficiaries
+
 ## Planned Modular Contracts
 
 The AXNV token does not contain presale, airdrop, staking, gaming, AI, or treasury logic directly.
@@ -184,7 +223,7 @@ These systems are designed as separate modules:
 
 - `AXNVPresaleVesting`
 - `AXNVAirdrop`
-- `AxionovaVesting`
+- `AXNVTeamAdvisorFounderVestingVault`
 - `AxionovaTreasury`
 - `AxionovaStaking`
 - `AxionovaGamingRewards`
@@ -208,6 +247,7 @@ AXNV follows a minimal and modular architecture:
 - Presale tokens claimable only after TGE and vesting unlocks
 - Airdrop claims verified using Merkle proofs
 - Airdrop tokens claimable only after TGE and vesting unlocks
+- Team, advisor, and founder allocations managed through a dedicated vesting vault
 
 ## License
 
