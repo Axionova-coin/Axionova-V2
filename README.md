@@ -1,10 +1,10 @@
-# Axionova V3 Contracts
+# Axionova Token
 
-Official smart contract repository for **Axionova V3 (AXNV)**.
+Official smart contract repository for **Axionova (AXNV)**.
 
 ## Overview
 
-Axionova V3 is designed as a fixed-supply ERC20 token with governance-ready functionality and modular external contracts for presale, airdrop, vesting, staking, gaming incentives, and AI rewards.
+Axionova is designed as a fixed-supply ERC20 token with governance-ready functionality and modular external contracts for presale, airdrop, vesting, staking, gaming incentives, and AI rewards.
 
 The core token contract is intentionally simple, non-upgradeable, and excludes tax, blacklist, minting, bridge, wrapper, and flash-mint functionality.
 
@@ -34,7 +34,7 @@ The core token contract is intentionally simple, non-upgradeable, and excludes t
 
 | Contract | Address |
 |---|---|
-| AXNVTokenV3 | `0x0c9c7B3e3D7F95F6f52F805250AFa7D2E335AeFD` |
+| AXNVToken | `0x0c9c7B3e3D7F95F6f52F805250AFa7D2E335AeFD` |
 
 ## Deployer
 
@@ -46,7 +46,7 @@ The core token contract is intentionally simple, non-upgradeable, and excludes t
 
 ## Core Token Features
 
-The AXNV V3 token includes:
+The AXNV token includes:
 
 - ERC20 standard functionality
 - ERC20Burnable
