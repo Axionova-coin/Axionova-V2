@@ -25,6 +25,7 @@ The AXNV token contract is designed to remain simple and modular. Presale, vesti
 | AXNV Airdrop | `0xA1680767D1F1bD2d117d1F53EAFd6C6F78096F98` |
 | AXNV Team Advisor Founder Vesting Vault | `0xFb039a997F34794CdCb80Df1ac86154C99aeAdfb` |
 | AXNV Treasury | `0xe1f3377Afe75Eb9051e300488C174373DEe16B69` |
+| AXNV Staking | `0x9f27A15A862323449dfe14988E13aE93F5b4cD13` |
 
 ## Deployer
 
@@ -256,6 +257,42 @@ Total treasury allocation:
 - Non-AXNV ERC20 rescue support
 - Treasury spend events include category, recipient, amount, and purpose
 
+## Staking Contract
+
+The AXNV staking contract allows holders to stake AXNV and earn rewards based on stake duration.
+
+The earlier staking model included user stake tracking, reward funding, minimum stake updates, emergency withdrawal penalties, and owner recovery protection for available AXNV [4]. The deployed staking contract follows the updated Axionova staking rules.
+
+## Staking Allocation
+
+Total staking rewards allocation:
+
+```text
+56,250,000 AXNV
+```
+
+## Staking Rules
+
+- Minimum stake: 10,000 AXNV
+- Rewards are funded into the staking contract
+- Staking rewards are capped by the staking rewards allocation
+- Users can withdraw before 1 month with a 10% penalty and no reward
+- Users can withdraw after 1 month and before 6 months with no penalty and no reward
+- Users can claim rewards after 6 months
+- Rewards accrue at 5% APR for the first 6 months
+- Rewards accrue at 8% APR after 6 months
+- Penalty AXNV remains inside the staking contract
+- Unallocated AXNV can be withdrawn by owner in emergency
+- Non-AXNV ERC20 rescue is supported
+
+## Staking Reward Model
+
+| Stake Duration | Principal | Reward | Penalty |
+|---|---:|---:|---:|
+| Before 1 month | 90% returned | No reward | 10% |
+| 1 month to before 6 months | 100% returned | No reward | No penalty |
+| After 6 months | 100% returned | 5% APR for first 6 months + 8% APR after 6 months | No penalty |
+
 ## Planned Modular Contracts
 
 The AXNV token does not contain presale, airdrop, staking, gaming, AI, or treasury logic directly.
@@ -266,7 +303,7 @@ These systems are designed as separate modules:
 - `AXNVAirdrop`
 - `AXNVTeamAdvisorFounderVestingVault`
 - `AXNVTreasury`
-- `AxionovaStaking`
+- `AXNVStaking`
 - `AxionovaGamingRewards`
 - `AxionovaAIRewards`
 - `AxionovaGovernor`
@@ -282,7 +319,7 @@ AXNV follows a minimal and modular architecture:
 - No blacklist
 - No upgradeable proxy for the token
 - No bridge logic inside the token
-- No presale, airdrop, vesting, or treasury logic inside the token
+- No presale, airdrop, vesting, staking, or treasury logic inside the token
 - Governance compatibility through ERC20Votes
 - Presale purchases recorded in a separate vesting contract
 - Presale tokens claimable only after TGE and vesting unlocks
@@ -290,6 +327,7 @@ AXNV follows a minimal and modular architecture:
 - Airdrop tokens claimable only after TGE and vesting unlocks
 - Team, advisor, and founder allocations managed through a dedicated vesting vault
 - Treasury allocations managed through a dedicated category-capped treasury contract
+- Staking rewards managed through a dedicated staking contract
 
 ## License
 
