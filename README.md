@@ -24,6 +24,7 @@ The AXNV token contract is designed to remain simple and modular. Presale, vesti
 | AXNV Presale Vesting | `0x1FC5C6C2FCF34fC96bd298d60F1d5C1B767fd33a` |
 | AXNV Airdrop | `0xA1680767D1F1bD2d117d1F53EAFd6C6F78096F98` |
 | AXNV Team Advisor Founder Vesting Vault | `0xFb039a997F34794CdCb80Df1ac86154C99aeAdfb` |
+| AXNV Treasury | `0xe1f3377Afe75Eb9051e300488C174373DEe16B69` |
 
 ## Deployer
 
@@ -215,6 +216,46 @@ Total vault allocation:
 - Unallocated AXNV can be recovered by owner
 - Reserved/allocated AXNV remains protected for beneficiaries
 
+## Treasury Contract
+
+The AXNV Treasury contract manages treasury allocations using category-wise caps.
+
+## Treasury Allocation
+
+Total treasury allocation:
+
+```text
+80,400,000 AXNV
+```
+
+| Category | Allocation |
+|---|---:|
+| Ecosystem Development | 42,900,000 AXNV |
+| Marketing / CEXs | 22,500,000 AXNV |
+| Bug Bounty | 7,500,000 AXNV |
+| Charity / Social Impact | 7,500,000 AXNV |
+| **Total** | **80,400,000 AXNV** |
+
+## Treasury Category IDs
+
+| Category ID | Category |
+|---:|---|
+| 1 | Ecosystem Development |
+| 2 | Marketing / CEXs |
+| 3 | Bug Bounty |
+| 4 | Charity / Social Impact |
+
+## Treasury Rules
+
+- Category-wise spending caps
+- Total treasury spending cap
+- Owner-controlled spending
+- Batch spending support
+- Emergency pause support
+- Excess AXNV recovery support
+- Non-AXNV ERC20 rescue support
+- Treasury spend events include category, recipient, amount, and purpose
+
 ## Planned Modular Contracts
 
 The AXNV token does not contain presale, airdrop, staking, gaming, AI, or treasury logic directly.
@@ -224,7 +265,7 @@ These systems are designed as separate modules:
 - `AXNVPresaleVesting`
 - `AXNVAirdrop`
 - `AXNVTeamAdvisorFounderVestingVault`
-- `AxionovaTreasury`
+- `AXNVTreasury`
 - `AxionovaStaking`
 - `AxionovaGamingRewards`
 - `AxionovaAIRewards`
@@ -241,13 +282,14 @@ AXNV follows a minimal and modular architecture:
 - No blacklist
 - No upgradeable proxy for the token
 - No bridge logic inside the token
-- No presale or airdrop logic inside the token
+- No presale, airdrop, vesting, or treasury logic inside the token
 - Governance compatibility through ERC20Votes
 - Presale purchases recorded in a separate vesting contract
 - Presale tokens claimable only after TGE and vesting unlocks
 - Airdrop claims verified using Merkle proofs
 - Airdrop tokens claimable only after TGE and vesting unlocks
 - Team, advisor, and founder allocations managed through a dedicated vesting vault
+- Treasury allocations managed through a dedicated category-capped treasury contract
 
 ## License
 
