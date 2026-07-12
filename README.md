@@ -2,6 +2,21 @@
 
 > Production-grade modular DeFi ecosystem built on BNB Smart Chain.
 
+![Solidity](https://img.shields.io/badge/Solidity-0.8.30-363636?style=for-the-badge&logo=solidity)
+![Hardhat](https://img.shields.io/badge/Hardhat-Framework-FFF100?style=for-the-badge&logo=ethereum&logoColor=black)
+![OpenZeppelin](https://img.shields.io/badge/OpenZeppelin-Security-4E5EE4?style=for-the-badge&logo=openzeppelin)
+![BNB Chain](https://img.shields.io/badge/BNB%20Chain-Mainnet-F3BA2F?style=for-the-badge&logo=binance&logoColor=black)
+![ERC20](https://img.shields.io/badge/ERC20-Token-blue?style=for-the-badge)
+![Governance](https://img.shields.io/badge/ERC20Votes-Governance-6A5ACD?style=for-the-badge)
+![License: MIT](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Production-success?style=for-the-badge)
+
+[![Website](https://img.shields.io/badge/Website-Axionova-0A66C2?style=for-the-badge&logo=google-chrome&logoColor=white)](https://axionova.network)
+
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/aditya-kumar-k/axionova-solidity-defi-contracts)
+
+[![Whitepaper](https://img.shields.io/badge/Whitepaper-Read-8A2BE2?style=for-the-badge)](https://axionova.network/whitepaper/)
+
 ## 🚀 Highlights
 
 - 23 Verified Smart Contracts
