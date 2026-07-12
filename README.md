@@ -6,7 +6,7 @@ Official smart contract repository for **Axionova (AXNV)**.
 
 Axionova is a fixed-supply ERC20 token deployed on BNB Smart Chain with burn, permit, and governance-ready voting support.
 
-The AXNV token contract is designed to remain simple and modular. Presale, vesting, airdrop, staking, gaming incentives, AI rewards, liquidity, treasury, governance, and community incentives systems are handled through separate contracts.
+The AXNV token contract is designed to remain simple and modular. Presale, vesting, airdrop, staking, gaming incentives, AI rewards, liquidity, treasury, governance, community incentives, and reserve systems are handled through separate contracts.
 
 ## Network
 
@@ -31,6 +31,7 @@ The AXNV token contract is designed to remain simple and modular. Presale, vesti
 | AXNV Governor | `0x9558c7B64e8Aa857104bf2b6BE3e5C2cE8f9B5C5` |
 | AXNV Governance Vault | `0xE330F50b928105271c3ab4272EdEe753F505b423` |
 | AXNV Community Incentives Distributor | `0xa37d810D4095Fb92BA54496611b68C14aE4b9f74` |
+| AXNV Reserve Vault | `0x6D1f07d9B57C76c445CE400927809D4d0e3b4d43` |
 
 ## Deployer
 
@@ -407,9 +408,40 @@ Total community incentives allocation:
 - Non-AXNV ERC20 rescue is supported
 - Campaigns can be deactivated or removed if unassigned
 
+## Reserve Vault
+
+The AXNV Reserve Vault is a flexible owner-controlled custody vault for reserve-related AXNV.
+
+It is designed to hold the main reserve allocation and may temporarily hold Game Incentives and AI Rewards allocations until their dedicated contracts are finalized.
+
+## Reserve-Related Allocations
+
+| Allocation | Tokens |
+|---|---:|
+| Reserve | 116,250,000 AXNV |
+| Game Incentives | 60,000,000 AXNV |
+| AI Rewards | 37,500,000 AXNV |
+| **Total potentially held in Reserve Vault** | **213,750,000 AXNV** |
+
+## Reserve Vault Rules
+
+- Flexible AXNV custody vault
+- No hardcoded allocation cap
+- Owner can fund the vault with AXNV
+- Owner can release AXNV to any recipient
+- Owner can release all AXNV
+- Release events include recipient, amount, and purpose
+- Non-AXNV ERC20 rescue is supported
+- AXNV rescue is intentionally handled through explicit AXNV release functions
+- Intended to support uncertain future plans for Reserve, Game Incentives, and AI Rewards
+
+## Reserve Vault Design Note
+
+The previous reserve vault design had a hardcoded `RESERVE_ALLOCATION_CAP` of `116,250,000 AXNV` and restricted funding to that cap [6]. The deployed reserve vault removes that cap so it can temporarily hold Reserve, Game Incentives, and AI Rewards allocations together while future contracts are researched and finalized.
+
 ## Planned Modular Contracts
 
-The AXNV token does not contain presale, airdrop, staking, gaming, AI, liquidity, treasury, governance, or community incentives logic directly.
+The AXNV token does not contain presale, airdrop, vesting, staking, liquidity, treasury, governance, community incentives, reserve, gaming, or AI rewards logic directly.
 
 These systems are designed as separate modules:
 
@@ -423,6 +455,7 @@ These systems are designed as separate modules:
 - `AXNVGovernor`
 - `AXNVGovernanceVault`
 - `AXNVCommunityIncentivesDistributor`
+- `AXNVReserveVault`
 - `AxionovaGamingRewards`
 - `AxionovaAIRewards`
 
@@ -436,7 +469,7 @@ AXNV follows a minimal and modular architecture:
 - No blacklist
 - No upgradeable proxy for the token
 - No bridge logic inside the token
-- No presale, airdrop, vesting, staking, liquidity, treasury, governance, or community incentives logic inside the token
+- No presale, airdrop, vesting, staking, liquidity, treasury, governance, community incentives, reserve, gaming, or AI rewards logic inside the token
 - Governance compatibility through ERC20Votes
 - Presale purchases recorded in a separate vesting contract
 - Presale tokens claimable only after TGE and vesting unlocks
@@ -448,6 +481,7 @@ AXNV follows a minimal and modular architecture:
 - Liquidity allocation managed through a dedicated liquidity vault
 - Governance actions protected by a timelock delay
 - Community incentives managed through a dedicated campaign-based distributor
+- Reserve, Game Incentives, and AI Rewards allocations can be temporarily held in the flexible reserve vault
 
 ## License
 
