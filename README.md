@@ -1,7 +1,5 @@
 # Axionova (AXNV)
 
-> Production-grade modular DeFi ecosystem built on BNB Smart Chain.
-
 ![Solidity](https://img.shields.io/badge/Solidity-0.8.30-363636?style=for-the-badge&logo=solidity)
 ![Hardhat](https://img.shields.io/badge/Hardhat-Framework-FFF100?style=for-the-badge&logo=ethereum&logoColor=black)
 ![OpenZeppelin](https://img.shields.io/badge/OpenZeppelin-Security-4E5EE4?style=for-the-badge&logo=openzeppelin)
@@ -10,6 +8,8 @@
 ![Governance](https://img.shields.io/badge/ERC20Votes-Governance-6A5ACD?style=for-the-badge)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 ![Status](https://img.shields.io/badge/Status-Production-success?style=for-the-badge)
+
+> Production-grade modular DeFi ecosystem built on BNB Smart Chain.
 
 [![Website](https://img.shields.io/badge/Website-Axionova-0A66C2?style=for-the-badge&logo=google-chrome&logoColor=white)](https://axionova.network)
 
