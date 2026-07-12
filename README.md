@@ -27,6 +27,9 @@ The AXNV token contract is designed to remain simple and modular. Presale, vesti
 | AXNV Treasury | `0xe1f3377Afe75Eb9051e300488C174373DEe16B69` |
 | AXNV Staking | `0x9f27A15A862323449dfe14988E13aE93F5b4cD13` |
 | AXNV Liquidity Allocation Vault | `0x801822D37a4A56D93a2D7E0A412b7E0a72f34e77` |
+| AXNV Timelock | `0x3bc9461e1f69a6Be7180A7630A62b69edF73CC68` |
+| AXNV Governor | `0x9558c7B64e8Aa857104bf2b6BE3e5C2cE8f9B5C5` |
+| AXNV Governance Vault | `0xE330F50b928105271c3ab4272EdEe753F505b423` |
 
 ## Deployer
 
@@ -135,6 +138,7 @@ Total presale allocation:
 - No soft cap
 - Unsold AXNV can be withdrawn by owner
 - Purchased AXNV remains in the contract until vested and claimed
+- The contract requires sufficient AXNV balance before accepting purchases [1]
 
 ## Presale Vesting Schedule
 
@@ -170,6 +174,7 @@ Total airdrop allocation:
 - Emergency pause is supported
 - Unclaimed rewards do not expire
 - Reserved AXNV cannot be recovered by owner
+- Merkle leaf format: `keccak256(abi.encode(roundId, wallet))` [2]
 
 ## Airdrop Vesting Schedule
 
@@ -317,9 +322,68 @@ Total liquidity allocation:
 - Non-AXNV ERC20 rescue is supported
 - Intended for liquidity deployment after presale completion
 
+## Governance System
+
+The AXNV governance system uses a timelock-based DAO structure where AXNV holders can create and vote on proposals, and approved actions execute after a timelock delay.
+
+## Governance Contracts
+
+| Contract | Purpose |
+|---|---|
+| AXNVTimelock | Delays execution of governance-approved actions |
+| AXNVGovernor | Handles proposals, voting, quorum, and execution |
+| AXNVGovernanceVault | Holds the governance allocation of 11,250,000 AXNV |
+
+## Governance Settings
+
+| Setting | Value |
+|---|---:|
+| Voting delay | 1 day (~28,800 blocks) |
+| Voting period | 5 days (~144,000 blocks) |
+| Proposal threshold | 500,000 AXNV |
+| Quorum | 2% of total supply |
+| Timelock delay | 2 days |
+
+## Governance Vault Allocation
+
+Total governance vault allocation:
+
+```text
+11,250,000 AXNV
+```
+
+## Governance Vault Rules
+
+- Governance allocation cap: 11,250,000 AXNV
+- AXNV can be funded into the vault by owner
+- Release can be paused by owner
+- Governance AXNV can be released with a specified purpose
+- Excess AXNV can be recovered by owner
+- Non-AXNV ERC20 rescue is supported
+
+## Governance Flow
+
+```text
+AXNV holders delegate votes
+↓
+Proposal created (requires 500,000 AXNV voting power)
+↓
+1 day voting delay
+↓
+5 day voting period
+↓
+Proposal passes if quorum (2%) and majority met
+↓
+Proposal queued in Timelock
+↓
+2 day timelock delay
+↓
+Proposal executed
+```
+
 ## Planned Modular Contracts
 
-The AXNV token does not contain presale, airdrop, staking, gaming, AI, liquidity, or treasury logic directly.
+The AXNV token does not contain presale, airdrop, staking, gaming, AI, liquidity, treasury, or governance logic directly.
 
 These systems are designed as separate modules:
 
@@ -329,10 +393,11 @@ These systems are designed as separate modules:
 - `AXNVTreasury`
 - `AXNVStaking`
 - `AXNVLiquidityAllocationVault`
+- `AXNVTimelock`
+- `AXNVGovernor`
+- `AXNVGovernanceVault`
 - `AxionovaGamingRewards`
 - `AxionovaAIRewards`
-- `AxionovaGovernor`
-- `AxionovaTimelock`
 
 ## Security Design
 
@@ -344,7 +409,7 @@ AXNV follows a minimal and modular architecture:
 - No blacklist
 - No upgradeable proxy for the token
 - No bridge logic inside the token
-- No presale, airdrop, vesting, staking, liquidity, or treasury logic inside the token
+- No presale, airdrop, vesting, staking, liquidity, treasury, or governance logic inside the token
 - Governance compatibility through ERC20Votes
 - Presale purchases recorded in a separate vesting contract
 - Presale tokens claimable only after TGE and vesting unlocks
@@ -354,6 +419,7 @@ AXNV follows a minimal and modular architecture:
 - Treasury allocations managed through a dedicated category-capped treasury contract
 - Staking rewards managed through a dedicated staking contract
 - Liquidity allocation managed through a dedicated liquidity vault
+- Governance actions protected by a timelock delay
 
 ## License
 
