@@ -6,7 +6,7 @@ Official smart contract repository for **Axionova (AXNV)**.
 
 Axionova is a fixed-supply ERC20 token deployed on BNB Smart Chain with burn, permit, and governance-ready voting support.
 
-The AXNV token contract is designed to remain simple and modular. Presale, vesting, airdrop, staking, gaming incentives, AI rewards, liquidity, treasury, and governance systems are handled through separate contracts.
+The AXNV token contract is designed to remain simple and modular. Presale, vesting, airdrop, staking, gaming incentives, AI rewards, liquidity, treasury, governance, and community incentives systems are handled through separate contracts.
 
 ## Network
 
@@ -30,6 +30,7 @@ The AXNV token contract is designed to remain simple and modular. Presale, vesti
 | AXNV Timelock | `0x3bc9461e1f69a6Be7180A7630A62b69edF73CC68` |
 | AXNV Governor | `0x9558c7B64e8Aa857104bf2b6BE3e5C2cE8f9B5C5` |
 | AXNV Governance Vault | `0xE330F50b928105271c3ab4272EdEe753F505b423` |
+| AXNV Community Incentives Distributor | `0xa37d810D4095Fb92BA54496611b68C14aE4b9f74` |
 
 ## Deployer
 
@@ -381,9 +382,34 @@ Proposal queued in Timelock
 Proposal executed
 ```
 
+## Community Incentives Distributor
+
+The AXNV Community Incentives Distributor manages campaign-based community incentives allocations.
+
+## Community Incentives Allocation
+
+Total community incentives allocation:
+
+```text
+11,250,000 AXNV
+```
+
+## Community Incentives Rules
+
+- Campaign-based reward distribution
+- Owner creates campaigns with fixed allocations
+- Owner assigns recipients to campaigns in batches
+- Users claim their assigned rewards per campaign
+- Batch claiming is supported
+- Claims can be paused by owner
+- Campaign allocation cap is enforced
+- Unallocated AXNV can be recovered by owner
+- Non-AXNV ERC20 rescue is supported
+- Campaigns can be deactivated or removed if unassigned
+
 ## Planned Modular Contracts
 
-The AXNV token does not contain presale, airdrop, staking, gaming, AI, liquidity, treasury, or governance logic directly.
+The AXNV token does not contain presale, airdrop, staking, gaming, AI, liquidity, treasury, governance, or community incentives logic directly.
 
 These systems are designed as separate modules:
 
@@ -396,6 +422,7 @@ These systems are designed as separate modules:
 - `AXNVTimelock`
 - `AXNVGovernor`
 - `AXNVGovernanceVault`
+- `AXNVCommunityIncentivesDistributor`
 - `AxionovaGamingRewards`
 - `AxionovaAIRewards`
 
@@ -409,7 +436,7 @@ AXNV follows a minimal and modular architecture:
 - No blacklist
 - No upgradeable proxy for the token
 - No bridge logic inside the token
-- No presale, airdrop, vesting, staking, liquidity, treasury, or governance logic inside the token
+- No presale, airdrop, vesting, staking, liquidity, treasury, governance, or community incentives logic inside the token
 - Governance compatibility through ERC20Votes
 - Presale purchases recorded in a separate vesting contract
 - Presale tokens claimable only after TGE and vesting unlocks
@@ -420,6 +447,7 @@ AXNV follows a minimal and modular architecture:
 - Staking rewards managed through a dedicated staking contract
 - Liquidity allocation managed through a dedicated liquidity vault
 - Governance actions protected by a timelock delay
+- Community incentives managed through a dedicated campaign-based distributor
 
 ## License
 
