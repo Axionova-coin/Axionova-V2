@@ -34,12 +34,6 @@
 
 ---
 
-## Allocation Philosophy
-
-Explain why each allocation exists.
-
----
-
 ## Vesting Summary
 
 | Allocation | Cliff | Vesting |
@@ -57,17 +51,9 @@ Explain why each allocation exists.
 ---
 
 ## Governance Allocation
-
----
-
-## Treasury Allocation
+11,250,000 AXNV
 
 ---
 
 ## Reserve Allocation
-
----
-
-## Sustainability
-
-Explain how the ecosystem is designed to remain sustainable over time.
+116,250,000 AXNV
