@@ -1,6 +1,34 @@
-# Axionova (AXNV) Smart Contracts
+# Axionova (AXNV)
 
-Official smart contract repository for **Axionova (AXNV)**.
+> Production-grade modular DeFi ecosystem built on BNB Smart Chain.
+
+## 🚀 Highlights
+
+- 23 Verified Smart Contracts
+- 750M AXNV Ecosystem
+- Modular Smart Contract Architecture
+- ERC20 + ERC20Permit + ERC20Votes
+- Governance & Timelock
+- Staking & Vesting
+- Treasury Management
+- Presale Infrastructure
+- Merkle Airdrop System
+- Production Deployment on BNB Smart Chain
+
+---
+
+## 🌐 Links
+
+- Website: https://axionova.network
+- GitHub: https://github.com/aditya-kumar-k/axionova-solidity-defi-contracts
+
+---
+
+## 🏗️ System Architecture
+
+![Axionova Architecture](assets/architecture.png)
+
+---
 
 ## Overview
 
