@@ -526,6 +526,10 @@ AXNV follows a minimal and modular architecture:
 - Community incentives managed through a dedicated campaign-based distributor
 - Reserve, Game Incentives, and AI Rewards allocations can be temporarily held in the flexible reserve vault
 
+## Security Review
+
+✓ Slither Static Analysis
+
 ## License
 
 MIT
