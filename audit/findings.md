@@ -725,3 +725,112 @@ No change required.
 **Status**
 
 Closed
+
+---
+---
+
+# AXNVAirdrop Findings
+
+## AXNV-AD-001
+
+**Severity:** None
+
+**Category:** Manual Review
+
+**Description**
+
+Reviewed Merkle proof verification, reward allocation and claim mechanism.
+
+**Result**
+
+No exploitable issues identified.
+
+**Status**
+
+Closed
+
+---
+
+## AXNV-AD-002
+
+**Severity:** None
+
+**Category:** Manual Review
+
+**Description**
+
+Reviewed vesting implementation, unlock schedule and double claim protection.
+
+**Result**
+
+No exploitable issues identified.
+
+**Status**
+
+Closed
+
+---
+
+## AXNV-AD-003
+
+**Severity:** None
+
+**Category:** Manual Review
+
+**Description**
+
+Reviewed administrative controls, Merkle root management and emergency controls.
+
+**Result**
+
+No unauthorized reward distribution paths identified.
+
+**Status**
+
+Closed
+
+---
+
+## AXNV-AD-004
+
+**Severity:** Low
+
+**Category:** Accepted Risk
+
+**Description**
+
+Slither reports timestamp-dependent and informational observations where applicable.
+
+Timestamp usage is intentional for vesting and unlock calculations.
+
+**Resolution**
+
+Accepted.
+
+No change required.
+
+**Status**
+
+Closed
+
+---
+
+## AXNV-AD-005
+
+**Severity:** Informational
+
+**Category:** Optimization
+
+**Description**
+
+Minor optimization recommendations reported by Slither.
+
+No impact on contract security or correctness.
+
+**Resolution**
+
+No change required.
+
+**Status**
+
+Closed

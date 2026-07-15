@@ -975,3 +975,175 @@ Remaining Slither findings were determined to be informational, optimization-rel
 ## Final Status
 
 ✅ Approved for deployment
+
+---
+---
+
+# AXNVAirdrop Audit
+
+**Contract:** AXNVAirdrop.sol
+
+**Status:** ✅ Completed
+
+---
+
+## Scope
+
+The contract was manually reviewed alongside Slither static analysis.
+
+The review focused on:
+
+- Airdrop eligibility
+- Claim mechanism
+- Vesting schedule
+- Merkle proof verification
+- Reward accounting
+- Access control
+- Emergency controls
+- Reentrancy protection
+- Business logic validation
+
+---
+
+## Manual Review
+
+### Airdrop Architecture
+
+The airdrop implementation was reviewed for:
+
+- Secure reward allocation
+- Immutable AXNV token reference
+- Merkle proof verification
+- Allocation integrity
+
+**Result**
+
+No exploitable issues identified.
+
+---
+
+### Claim Mechanism
+
+The claim process was reviewed for:
+
+- Merkle proof validation
+- One-time claim protection
+- Vesting calculations
+- Double claim prevention
+- Reward accounting
+
+**Result**
+
+No exploitable issues identified.
+
+---
+
+### Vesting Logic
+
+The vesting mechanism was reviewed for:
+
+- Initial unlock
+- Linear vesting
+- Remaining allocation
+- Final settlement
+- Rounding behaviour
+
+**Result**
+
+No exploitable issues identified.
+
+---
+
+### Reward Accounting
+
+The reward accounting was reviewed for:
+
+- Reserved allocations
+- Remaining balance
+- Allocation protection
+- Claim consistency
+
+**Result**
+
+No exploitable issues identified.
+
+---
+
+### Administrative Controls
+
+Reviewed functions include:
+
+- Set Merkle Root
+- Pause()
+- Unpause()
+- Emergency recovery
+- Administrative configuration
+
+**Result**
+
+Administrative permissions are consistent with the intended airdrop design.
+
+---
+
+### Reentrancy
+
+Protected using OpenZeppelin ReentrancyGuard.
+
+**Result**
+
+No reentrancy vulnerabilities identified.
+
+---
+
+### Access Control
+
+Owner-only administrative functions are correctly restricted.
+
+Users can only claim rewards allocated to their wallet.
+
+**Result**
+
+No access control issues identified.
+
+---
+
+## Business Logic Validation
+
+The following scenarios were reviewed.
+
+| Scenario | Result |
+|-----------|--------|
+| Valid Merkle proof | ✅ |
+| Invalid Merkle proof | ✅ |
+| Duplicate claim attempt | ✅ |
+| Claim before unlock | ✅ |
+| Claim after unlock | ✅ |
+| Partial vesting claim | ✅ |
+| Final vesting claim | ✅ |
+| Pause claims | ✅ |
+| Resume claims | ✅ |
+| Reward accounting | ✅ |
+| Recover unrelated ERC20 | ✅ |
+| Reentrancy attempt | ✅ |
+
+---
+
+## Conclusion
+
+No Critical, High, or Medium severity vulnerabilities were identified during the manual review.
+
+The contract demonstrates:
+
+- Secure Merkle proof verification
+- Correct reward accounting
+- Proper vesting implementation
+- Safe claim mechanism
+- Appropriate administrative controls
+
+Remaining Slither findings were determined to be informational, optimization-related, or expected behaviour for a Merkle-based airdrop contract.
+
+---
+
+## Final Status
+
+✅ Approved for deployment
