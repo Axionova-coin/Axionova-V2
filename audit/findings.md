@@ -943,3 +943,112 @@ No change required.
 **Status**
 
 Closed
+
+---
+---
+
+# AXNVGovernanceVault Findings
+
+## AXNV-GV-001
+
+**Severity:** None
+
+**Category:** Manual Review
+
+**Description**
+
+Reviewed governance allocation custody, accounting and transfer mechanism.
+
+**Result**
+
+No exploitable issues identified.
+
+**Status**
+
+Closed
+
+---
+
+## AXNV-GV-002
+
+**Severity:** None
+
+**Category:** Manual Review
+
+**Description**
+
+Reviewed administrative controls, governance fund management and emergency controls.
+
+**Result**
+
+No exploitable issues identified.
+
+**Status**
+
+Closed
+
+---
+
+## AXNV-GV-003
+
+**Severity:** None
+
+**Category:** Manual Review
+
+**Description**
+
+Reviewed access control and authorization model.
+
+**Result**
+
+No privilege escalation or unauthorized governance fund access identified.
+
+**Status**
+
+Closed
+
+---
+
+## AXNV-GV-004
+
+**Severity:** Low
+
+**Category:** Accepted Risk
+
+**Description**
+
+Slither reports informational and timestamp-related observations where applicable.
+
+No exploitable impact on governance fund security was identified.
+
+**Resolution**
+
+Accepted.
+
+No change required.
+
+**Status**
+
+Closed
+
+---
+
+## AXNV-GV-005
+
+**Severity:** Informational
+
+**Category:** Optimization
+
+**Description**
+
+Minor optimization recommendations reported by Slither.
+
+No impact on contract security or correctness.
+
+**Resolution**
+
+No change required.
+
+**Status**
+
+Closed
