@@ -43,18 +43,6 @@ No migration required.
 Closed
 
 ---
-
-## AXNV-002
-
-Reserved
-
----
-
-## AXNV-003
-
-Reserved
-
----
 ---
 
 ## AXNV-PS-001
