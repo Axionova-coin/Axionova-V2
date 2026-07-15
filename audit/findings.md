@@ -53,3 +53,131 @@ Reserved
 ## AXNV-003
 
 Reserved
+
+---
+---
+
+## AXNV-PS-001
+
+**Contract**
+
+AXNVPresaleVesting.sol
+
+**Severity**
+
+None
+
+**Category**
+
+Manual Review
+
+**Description**
+
+Purchase logic reviewed including multi-phase purchases, reserve accounting and oversubscription protection.
+
+**Result**
+
+No exploitable issues identified.
+
+**Status**
+
+Closed
+
+---
+
+## AXNV-PS-002
+
+**Contract**
+
+AXNVPresaleVesting.sol
+
+**Severity**
+
+None
+
+**Category**
+
+Manual Review
+
+**Description**
+
+Vesting and claim calculations reviewed.
+
+The implementation correctly applies:
+
+- 15% TGE unlock
+- Linear vesting
+- Double-claim prevention
+- Final claim settlement
+
+**Status**
+
+Closed
+
+---
+
+## AXNV-PS-003
+
+**Contract**
+
+AXNVPresaleVesting.sol
+
+**Severity**
+
+Low
+
+**Category**
+
+Accepted Risk
+
+**Description**
+
+Slither reports timestamp-dependent logic.
+
+The contract intentionally relies on `block.timestamp` for:
+
+- Sale status
+- TGE activation
+- Vesting calculations
+
+This behaviour is expected for a time-based vesting contract.
+
+**Resolution**
+
+Accepted.
+
+No change required.
+
+**Status**
+
+Closed
+
+---
+
+## AXNV-PS-004
+
+**Contract**
+
+AXNVPresaleVesting.sol
+
+**Severity**
+
+Informational
+
+**Category**
+
+Optimization
+
+**Description**
+
+Slither reports `_advancePhase()` contains a state update inside a bounded loop.
+
+The presale consists of only three phases, making the loop bounded and predictable.
+
+**Resolution**
+
+No change required.
+
+**Status**
+
+Closed
