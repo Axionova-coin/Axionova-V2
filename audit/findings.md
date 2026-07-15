@@ -289,3 +289,112 @@ No change required.
 **Status**
 
 Closed
+
+---
+---
+
+# AXNVStaking Findings
+
+## AXNV-ST-001
+
+**Severity:** None
+
+**Category:** Manual Review
+
+**Description**
+
+Reviewed staking creation, accounting, and reward allocation.
+
+**Result**
+
+No exploitable issues identified.
+
+**Status**
+
+Closed
+
+---
+
+## AXNV-ST-002
+
+**Severity:** None
+
+**Category:** Manual Review
+
+**Description**
+
+Reviewed reward calculations, maturity handling, and unstake logic.
+
+**Result**
+
+No exploitable issues identified.
+
+**Status**
+
+Closed
+
+---
+
+## AXNV-ST-003
+
+**Severity:** None
+
+**Category:** Manual Review
+
+**Description**
+
+Reviewed reward pool accounting and principal protection.
+
+**Result**
+
+No exploitable issues identified.
+
+**Status**
+
+Closed
+
+---
+
+## AXNV-ST-004
+
+**Severity:** Low
+
+**Category:** Accepted Risk
+
+**Description**
+
+Slither reports timestamp-dependent reward calculations.
+
+Timestamp usage is intentional and required for lock periods and APR calculations.
+
+**Resolution**
+
+Accepted.
+
+No change required.
+
+**Status**
+
+Closed
+
+---
+
+## AXNV-ST-005
+
+**Severity:** Informational
+
+**Category:** Optimization
+
+**Description**
+
+Minor optimization recommendations reported by Slither.
+
+No impact on contract security or correctness.
+
+**Resolution**
+
+No change required.
+
+**Status**
+
+Closed

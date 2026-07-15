@@ -344,3 +344,175 @@ expected behaviour for a time-based vesting contract.
 ## Final Status
 
 ✅ **Approved for deployment**
+
+---
+---
+
+# AXNVStaking Audit
+
+**Contract:** AXNVStaking.sol
+
+**Status:** ✅ Completed
+
+---
+
+## Scope
+
+The contract was manually reviewed alongside Slither static analysis.
+
+The review focused on:
+
+- Stake creation
+- Reward calculations
+- Lock period enforcement
+- Claim mechanism
+- Unstake flow
+- Reward pool accounting
+- Administrative controls
+- Access control
+- Business logic validation
+
+---
+
+## Manual Review
+
+### Stake Creation
+
+The staking mechanism was reviewed for:
+
+- Minimum stake enforcement
+- Multiple concurrent stakes
+- Token accounting
+- Reward reservation
+- Pool availability
+
+**Result**
+
+No exploitable issues identified.
+
+---
+
+### Reward Calculation
+
+The reward calculation was reviewed for:
+
+- Fixed APR calculations
+- Lock duration handling
+- Reward precision
+- Overflow and underflow protection
+- Final reward settlement
+
+**Result**
+
+No exploitable issues identified.
+
+---
+
+### Claim & Unstake
+
+The unstake and reward distribution process was reviewed for:
+
+- Early withdrawal protection
+- Reward settlement
+- Double claim prevention
+- Principal return
+- Mature stake handling
+
+**Result**
+
+No exploitable issues identified.
+
+---
+
+### Reward Pool Accounting
+
+The reward pool was reviewed for:
+
+- Reserved rewards
+- Available rewards
+- Pool exhaustion protection
+- Accounting consistency
+
+**Result**
+
+No exploitable issues identified.
+
+---
+
+### Administrative Controls
+
+Reviewed functions include:
+
+- Pause()
+- Unpause()
+- Reward funding
+- Emergency recovery (where applicable)
+
+**Result**
+
+Administrative permissions are consistent with the intended staking design.
+
+---
+
+### Reentrancy
+
+Protected using OpenZeppelin ReentrancyGuard.
+
+**Result**
+
+No reentrancy vulnerabilities identified.
+
+---
+
+### Access Control
+
+Owner-only administrative functions are correctly restricted.
+
+User staking operations remain permissionless.
+
+**Result**
+
+No access control issues identified.
+
+---
+
+## Business Logic Validation
+
+The following scenarios were reviewed.
+
+| Scenario | Result |
+|-----------|--------|
+| Minimum stake | ✅ |
+| Maximum realistic stake | ✅ |
+| Multiple concurrent stakes | ✅ |
+| Stake while paused | ✅ |
+| Unstake before maturity | ✅ |
+| Unstake after maturity | ✅ |
+| Claim rewards | ✅ |
+| Double reward claim | ✅ |
+| Multiple reward claims | ✅ |
+| Reward pool depletion | ✅ |
+| Principal return | ✅ |
+| Emergency pause | ✅ |
+
+---
+
+## Conclusion
+
+No Critical, High, or Medium severity vulnerabilities were identified during the manual review.
+
+The contract demonstrates:
+
+- Secure staking implementation
+- Correct reward accounting
+- Proper access control
+- Safe reward distribution
+- Appropriate emergency controls
+
+Remaining Slither findings were determined to be informational, optimization-related, or expected behaviour for a staking contract.
+
+---
+
+## Final Status
+
+✅ Approved for deployment
