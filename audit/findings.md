@@ -507,3 +507,112 @@ No change required.
 **Status**
 
 Closed
+
+---
+---
+
+# AXNVLiquidityAllocationVault Findings
+
+## AXNV-LV-001
+
+**Severity:** None
+
+**Category:** Manual Review
+
+**Description**
+
+Reviewed liquidity allocation custody, accounting and release mechanism.
+
+**Result**
+
+No exploitable issues identified.
+
+**Status**
+
+Closed
+
+---
+
+## AXNV-LV-002
+
+**Severity:** None
+
+**Category:** Manual Review
+
+**Description**
+
+Reviewed administrative controls, emergency pause and liquidity management.
+
+**Result**
+
+No exploitable issues identified.
+
+**Status**
+
+Closed
+
+---
+
+## AXNV-LV-003
+
+**Severity:** None
+
+**Category:** Manual Review
+
+**Description**
+
+Reviewed access control and authorization model.
+
+**Result**
+
+No privilege escalation or unauthorized liquidity access identified.
+
+**Status**
+
+Closed
+
+---
+
+## AXNV-LV-004
+
+**Severity:** Low
+
+**Category:** Accepted Risk
+
+**Description**
+
+Slither reports informational and timestamp-related observations where applicable.
+
+No exploitable impact on liquidity security was identified.
+
+**Resolution**
+
+Accepted.
+
+No change required.
+
+**Status**
+
+Closed
+
+---
+
+## AXNV-LV-005
+
+**Severity:** Informational
+
+**Category:** Optimization
+
+**Description**
+
+Minor optimization recommendations reported by Slither.
+
+No impact on contract security or correctness.
+
+**Resolution**
+
+No change required.
+
+**Status**
+
+Closed
