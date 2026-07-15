@@ -1,6 +1,6 @@
 # Axionova Internal Smart Contract Audit
 
-**Project:** Axionova V3 Smart Contracts
+**Project:** Axionova (AXNV) Smart Contracts
 
 **Audit Type:** Internal Security Review
 
