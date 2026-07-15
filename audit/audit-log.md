@@ -4,7 +4,7 @@
 
 **Audit Type:** Internal Security Review
 
-**Status:** In Progress
+**Status:** COMPLETED
 
 **Audit Tools**
 - Slither v0.11.5
