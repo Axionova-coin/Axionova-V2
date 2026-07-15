@@ -834,3 +834,112 @@ No change required.
 **Status**
 
 Closed
+
+---
+---
+
+# AXNVReserveVault Findings
+
+## AXNV-RV-001
+
+**Severity:** None
+
+**Category:** Manual Review
+
+**Description**
+
+Reviewed reserve custody, accounting and transfer mechanism.
+
+**Result**
+
+No exploitable issues identified.
+
+**Status**
+
+Closed
+
+---
+
+## AXNV-RV-002
+
+**Severity:** None
+
+**Category:** Manual Review
+
+**Description**
+
+Reviewed administrative controls, reserve management and emergency controls.
+
+**Result**
+
+No exploitable issues identified.
+
+**Status**
+
+Closed
+
+---
+
+## AXNV-RV-003
+
+**Severity:** None
+
+**Category:** Manual Review
+
+**Description**
+
+Reviewed access control and authorization model.
+
+**Result**
+
+No privilege escalation or unauthorized reserve access identified.
+
+**Status**
+
+Closed
+
+---
+
+## AXNV-RV-004
+
+**Severity:** Low
+
+**Category:** Accepted Risk
+
+**Description**
+
+Slither reports informational and timestamp-related observations where applicable.
+
+No exploitable impact on reserve security was identified.
+
+**Resolution**
+
+Accepted.
+
+No change required.
+
+**Status**
+
+Closed
+
+---
+
+## AXNV-RV-005
+
+**Severity:** Informational
+
+**Category:** Optimization
+
+**Description**
+
+Minor optimization recommendations reported by Slither.
+
+No impact on contract security or correctness.
+
+**Resolution**
+
+No change required.
+
+**Status**
+
+Closed
