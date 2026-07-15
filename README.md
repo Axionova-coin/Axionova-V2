@@ -41,7 +41,7 @@
 
 ## 🏗️ System Architecture
 
-![Axionova Architecture](assets/architecture.png)
+![Axionova Architecture](assets/images/architecture.png)
 
 ---
 
