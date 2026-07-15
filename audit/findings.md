@@ -616,3 +616,112 @@ No change required.
 **Status**
 
 Closed
+
+---
+---
+
+# AXNVCommunityIncentivesDistributor Findings
+
+## AXNV-CI-001
+
+**Severity:** None
+
+**Category:** Manual Review
+
+**Description**
+
+Reviewed community reward distribution, accounting and allocation logic.
+
+**Result**
+
+No exploitable issues identified.
+
+**Status**
+
+Closed
+
+---
+
+## AXNV-CI-002
+
+**Severity:** None
+
+**Category:** Manual Review
+
+**Description**
+
+Reviewed claim mechanism, eligibility verification and double claim protection.
+
+**Result**
+
+No exploitable issues identified.
+
+**Status**
+
+Closed
+
+---
+
+## AXNV-CI-003
+
+**Severity:** None
+
+**Category:** Manual Review
+
+**Description**
+
+Reviewed administrative controls, reward allocation and emergency controls.
+
+**Result**
+
+No unauthorized distribution paths identified.
+
+**Status**
+
+Closed
+
+---
+
+## AXNV-CI-004
+
+**Severity:** Low
+
+**Category:** Accepted Risk
+
+**Description**
+
+Slither reports timestamp and informational observations where applicable.
+
+These are expected for scheduled distribution and claim operations.
+
+**Resolution**
+
+Accepted.
+
+No change required.
+
+**Status**
+
+Closed
+
+---
+
+## AXNV-CI-005
+
+**Severity:** Informational
+
+**Category:** Optimization
+
+**Description**
+
+Minor optimization recommendations reported by Slither.
+
+No impact on contract security or correctness.
+
+**Resolution**
+
+No change required.
+
+**Status**
+
+Closed
