@@ -19,7 +19,7 @@
 
 ## 🚀 Highlights
 
-- 23 Verified Smart Contracts
+- 12+ Verified Smart Contracts
 - 750M AXNV Ecosystem
 - Modular Smart Contract Architecture
 - ERC20 + ERC20Permit + ERC20Votes
@@ -35,7 +35,7 @@
 ## 🌐 Links
 
 - Website: https://axionova.network
-- GitHub: https://github.com/aditya-kumar-k/axionova-solidity-defi-contracts
+- GitHub: https://github.com/axionova-coin/axionova
 
 ---
 
