@@ -181,3 +181,111 @@ No change required.
 **Status**
 
 Closed
+
+---
+---
+
+# AXNVTeamAdvisorFounderVestingVault Findings
+
+## AXNV-TV-001
+
+**Severity:** None
+
+**Category:** Manual Review
+
+**Description**
+
+Reviewed vesting implementation for Team, Advisors, and Founder
+allocations.
+
+**Result**
+
+No exploitable issues identified.
+
+**Status**
+
+Closed
+
+------------------------------------------------------------------------
+
+## AXNV-TV-002
+
+**Severity:** None
+
+**Category:** Manual Review
+
+**Description**
+
+Reviewed claim mechanism, batch claims, accounting, and double-claim
+protection.
+
+**Result**
+
+No exploitable issues identified.
+
+**Status**
+
+Closed
+
+------------------------------------------------------------------------
+
+## AXNV-TV-003
+
+**Severity:** None
+
+**Category:** Manual Review
+
+**Description**
+
+Reviewed reserve accounting and recoverable balance calculations.
+
+Reserved allocations remain protected.
+
+**Status**
+
+Closed
+
+------------------------------------------------------------------------
+
+## AXNV-TV-004
+
+**Severity:** Low
+
+**Category:** Accepted Risk
+
+**Description**
+
+Slither reports timestamp-dependent vesting calculations.
+
+Timestamp usage is intentional and required for cliff and linear
+vesting.
+
+**Resolution**
+
+Accepted. No change required.
+
+**Status**
+
+Closed
+
+------------------------------------------------------------------------
+
+## AXNV-TV-005
+
+**Severity:** Informational
+
+**Category:** Optimization
+
+**Description**
+
+Minor optimization suggestions reported by Slither.
+
+No impact on contract security or correctness.
+
+**Resolution**
+
+No change required.
+
+**Status**
+
+Closed

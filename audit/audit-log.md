@@ -194,3 +194,153 @@ The contract architecture demonstrates appropriate use of OpenZeppelin security 
 **Final Status**
 
 ✅ Approved for deployment.
+
+---
+---
+
+# AXNVTeamAdvisorFounderVestingVault Audit
+
+**Status:** ✅ Completed
+
+------------------------------------------------------------------------
+
+## Scope
+
+-   Team vesting
+-   Advisors & Partners vesting
+-   Founder vesting
+-   Claim mechanism
+-   Category allocation limits
+-   Reserve accounting
+-   Access control
+-   Business logic review
+-   Slither review
+
+------------------------------------------------------------------------
+
+## Manual Review
+
+### Vesting Architecture
+
+**Result:** ✅ PASS
+
+-   Category-based vesting is clearly separated.
+-   Team, Advisor, and Founder allocations are isolated.
+-   Immutable AXNV token reference.
+
+### Claim Logic
+
+**Result:** ✅ PASS
+
+Reviewed:
+
+-   Single claim
+-   Batch claim
+-   Partial claims
+-   Final claim
+-   Double-claim prevention
+
+No exploitable issues identified.
+
+### Vesting Logic
+
+**Result:** ✅ PASS
+
+Reviewed:
+
+-   Cliff handling
+-   Linear vesting
+-   Final unlock
+-   Rounding behaviour
+
+No exploitable issues identified.
+
+### Reserve Accounting
+
+**Result:** ✅ PASS
+
+Reserved beneficiary allocations remain protected.
+
+### Administrative Controls
+
+Reviewed:
+
+-   `fundVault()`
+-   `setClaimsPaused()`
+
+**Result:** ✅ PASS
+
+Administrative permissions are appropriate for the intended design.
+
+### Reentrancy
+
+**Result:** ✅ PASS
+
+Protected using OpenZeppelin ReentrancyGuard.
+
+### Access Control
+
+**Result:** ✅ PASS
+
+Owner-only functions are correctly restricted.
+
+Claim functions remain beneficiary-controlled.
+
+------------------------------------------------------------------------
+
+## Business Logic Validation
+
+  Scenario                         Result
+  -------------------------------- --------
+  Claim before cliff               ✅
+  Claim after cliff                ✅
+  Partial vesting claim            ✅
+  Final vesting claim              ✅
+  Multiple claims                  ✅
+  Batch claims                     ✅
+  Claim after full vesting         ✅
+  Pause claims                     ✅
+  Resume claims                    ✅
+  Reserve accounting               ✅
+  Recoverable balance              ✅
+  Category allocation protection   ✅
+
+------------------------------------------------------------------------
+
+## Slither Findings Assessment
+
+### Medium Findings
+
+Reviewed individually.
+
+**Result:** No exploitable vulnerabilities identified.
+
+### Low Findings
+
+Primarily informational or expected vesting behaviour.
+
+### Informational Findings
+
+No action required.
+
+------------------------------------------------------------------------
+
+## Conclusion
+
+No Critical, High, or Medium severity vulnerabilities were identified
+during the manual review.
+
+The contract demonstrates:
+
+-   Correct vesting implementation
+-   Proper reserve accounting
+-   Appropriate access control
+-   Secure claim mechanism
+-   Safe beneficiary accounting
+
+Remaining Slither findings are informational, optimization-related, or
+expected behaviour for a time-based vesting contract.
+
+## Final Status
+
+✅ **Approved for deployment**
