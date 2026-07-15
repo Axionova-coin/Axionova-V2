@@ -516,3 +516,155 @@ Remaining Slither findings were determined to be informational, optimization-rel
 ## Final Status
 
 ✅ Approved for deployment
+
+---
+---
+
+# AXNVTreasury Audit
+
+**Contract:** AXNVTreasury.sol
+
+**Status:** ✅ Completed
+
+---
+
+## Scope
+
+The contract was manually reviewed alongside Slither static analysis.
+
+The review focused on:
+
+- Treasury custody
+- Fund release
+- Access control
+- Emergency controls
+- Token recovery
+- Treasury accounting
+- Reentrancy protection
+- Business logic validation
+
+---
+
+## Manual Review
+
+### Treasury Architecture
+
+The treasury implementation was reviewed for:
+
+- Secure custody of treasury assets
+- Immutable token reference
+- Treasury accounting
+- Administrative separation
+
+**Result**
+
+No exploitable issues identified.
+
+---
+
+### Treasury Operations
+
+The treasury transfer mechanism was reviewed for:
+
+- Authorized transfers
+- Balance validation
+- SafeERC20 usage
+- Event emission
+- Accounting consistency
+
+**Result**
+
+No exploitable issues identified.
+
+---
+
+### Reserve Protection
+
+The treasury was reviewed for:
+
+- Unauthorized withdrawals
+- Incorrect accounting
+- Treasury depletion
+- Asset protection
+
+**Result**
+
+No exploitable issues identified.
+
+---
+
+### Administrative Controls
+
+Reviewed functions include:
+
+- Treasury transfers
+- Pause()
+- Unpause()
+- Emergency recovery (if applicable)
+
+**Result**
+
+Administrative permissions are consistent with the intended treasury design.
+
+---
+
+### Reentrancy
+
+Protected using OpenZeppelin ReentrancyGuard.
+
+**Result**
+
+No reentrancy vulnerabilities identified.
+
+---
+
+### Access Control
+
+Owner-only treasury operations are correctly restricted.
+
+No privilege escalation paths were identified.
+
+**Result**
+
+No access control issues identified.
+
+---
+
+## Business Logic Validation
+
+The following scenarios were reviewed.
+
+| Scenario | Result |
+|-----------|--------|
+| Treasury funded | ✅ |
+| Authorized transfer | ✅ |
+| Unauthorized transfer attempt | ✅ |
+| Transfer exceeding balance | ✅ |
+| Pause treasury | ✅ |
+| Resume treasury | ✅ |
+| Recover unrelated ERC20 | ✅ |
+| Treasury accounting | ✅ |
+| Multiple transfers | ✅ |
+| Reentrancy attempt | ✅ |
+
+---
+
+## Conclusion
+
+No Critical, High, or Medium severity vulnerabilities were identified during the manual review.
+
+The contract demonstrates:
+
+- Secure treasury custody
+- Proper access control
+- Safe ERC20 transfers
+- Appropriate emergency controls
+- Correct treasury accounting
+
+Remaining Slither findings were determined to be informational, optimization-related, or expected behaviour for a treasury contract.
+
+---
+
+## Final Status
+
+✅ Approved for deployment

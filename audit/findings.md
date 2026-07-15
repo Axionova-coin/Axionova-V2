@@ -398,3 +398,112 @@ No change required.
 **Status**
 
 Closed
+
+---
+---
+
+# AXNVTreasury Findings
+
+## AXNV-TR-001
+
+**Severity:** None
+
+**Category:** Manual Review
+
+**Description**
+
+Reviewed treasury custody, accounting and transfer logic.
+
+**Result**
+
+No exploitable issues identified.
+
+**Status**
+
+Closed
+
+---
+
+## AXNV-TR-002
+
+**Severity:** None
+
+**Category:** Manual Review
+
+**Description**
+
+Reviewed administrative controls, emergency pause and treasury management.
+
+**Result**
+
+No exploitable issues identified.
+
+**Status**
+
+Closed
+
+---
+
+## AXNV-TR-003
+
+**Severity:** None
+
+**Category:** Manual Review
+
+**Description**
+
+Reviewed access control and authorization model.
+
+**Result**
+
+No privilege escalation or unauthorized treasury access identified.
+
+**Status**
+
+Closed
+
+---
+
+## AXNV-TR-004
+
+**Severity:** Low
+
+**Category:** Accepted Risk
+
+**Description**
+
+Slither reports timestamp and/or informational findings where applicable.
+
+No exploitable impact on treasury security was identified.
+
+**Resolution**
+
+Accepted.
+
+No change required.
+
+**Status**
+
+Closed
+
+---
+
+## AXNV-TR-005
+
+**Severity:** Informational
+
+**Category:** Optimization
+
+**Description**
+
+Minor optimization recommendations reported by Slither.
+
+No impact on contract security or correctness.
+
+**Resolution**
+
+No change required.
+
+**Status**
+
+Closed
