@@ -65,7 +65,7 @@ The AXNV token contract is designed to remain simple and modular. Presale, vesti
 |---|---|
 | AXNV Token | `0x0c9c7B3e3D7F95F6f52F805250AFa7D2E335AeFD` |
 | AXNV Presale Vesting | `0x1FC5C6C2FCF34fC96bd298d60F1d5C1B767fd33a` |
-| AXNV Airdrop | `0xA1680767D1F1bD2d117d1F53EAFd6C6F78096F98` |
+| AXNV Airdrop | `0xE49e372f454422f9c7CCCecB9c4d521b0fAF4CEF` |
 | AXNV Team Advisor Founder Vesting Vault | `0xFb039a997F34794CdCb80Df1ac86154C99aeAdfb` |
 | AXNV Treasury | `0xe1f3377Afe75Eb9051e300488C174373DEe16B69` |
 | AXNV Staking | `0x9f27A15A862323449dfe14988E13aE93F5b4cD13` |
